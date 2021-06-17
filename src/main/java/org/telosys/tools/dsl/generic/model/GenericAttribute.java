@@ -80,6 +80,8 @@ public class GenericAttribute implements Attribute {
 	private boolean isDateBefore = false;
 	private boolean isDateFuture = false;
 	private boolean isDatePast = false;
+	private boolean isInsertable = false;
+	private boolean isUpdatable = false;
 	
 	//private boolean isUsedInForeignKey = false;
 	// An attribute can be involved in many FK, it can be both in a SIMPLE FK and in a COMPOSITE FK 
@@ -468,6 +470,22 @@ public class GenericAttribute implements Attribute {
 	}
 	public void setDatePast(boolean isDatePast) {
 		this.isDatePast = isDatePast;
+	}
+	
+	@Override
+	public boolean isInsertable() {
+		return isInsertable;
+	}
+	public void setInsertable(boolean isInsertable) {
+		this.isInsertable = isInsertable;
+	}
+	
+	@Override
+	public boolean isUpdatable() {
+		return isUpdatable;
+	}
+	public void setUpdatable(boolean isUpdatable) {
+		this.isUpdatable = isUpdatable;
 	}
 
 	@Override
